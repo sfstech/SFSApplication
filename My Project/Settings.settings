@@ -1,0 +1,63 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="SFSConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=sfssql1.admin.washington.edu;Initial Catalog=SFS;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=sfssql1.admin.washington.edu;Initial Catalog=SFS;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="SFSConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Dsn=SFS;description=SFS;uid=phamlin;app=Microsoft® Visual Studio® 2005;wsid=JGN7Z61_SFS;database=SFS;trusted_connection=Yes&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.Odbc&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Dsn=SFS;description=SFS;uid=phamlin;app=Microsoft® Visual Studio® 2005;wsid=JGN7Z61_SFS;database=SFS;trusted_connection=Yes</Value>
+    </Setting>
+    <Setting Name="ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Dsn=Visual FoxPro Tables;sourcedb=i:\GROUPS\SFS\DBASES\SCHOL;sourcetype=DBF;exclusive=No;backgroundfetch=No;collate=Machine&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.Odbc&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Dsn=Visual FoxPro Tables;sourcedb=i:\GROUPS\SFS\DBASES\SCHOL;sourcetype=DBF;exclusive=No;backgroundfetch=No;collate=Machine</Value>
+    </Setting>
+    <Setting Name="ConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Provider=VFPOLEDB.1;Data Source=I:\groups\sfs\dbases\schol\student.dbf&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=VFPOLEDB.1;Data Source=I:\groups\sfs\dbases\schol\student.dbf</Value>
+    </Setting>
+    <Setting Name="ConnectionString2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Provider=VFPOLEDB.1;Data Source=I:\groups\sfs\dbases\schol&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=VFPOLEDB.1;Data Source=I:\groups\sfs\dbases\schol</Value>
+    </Setting>
+    <Setting Name="SFS_TerraServiceWS_TerraService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://terraserver-usa.com/TerraService2.asmx</Value>
+    </Setting>
+    <Setting Name="ReportingServices" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=sfssql1.admin.washington.edu;Initial Catalog=ReportServer;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=sfssql1.admin.washington.edu;Initial Catalog=ReportServer;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="SFS_TECH_U" Type="System.String" Scope="User">
+      <Value Profile="(Default)">netid\sfstech</Value>
+    </Setting>
+    <Setting Name="SFS_TECH_P" Type="System.String" Scope="User">
+      <Value Profile="(Default)">email4SFS</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
