@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsCashierDepositTot" targetNamespace="http://tempuri.org/dsCashierDepositTot.xsd" xmlns:mstns="http://tempuri.org/dsCashierDepositTot.xsd" xmlns="http://tempuri.org/dsCashierDepositTot.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="SFSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SFSConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SFS.My.MySettings.GlobalReference.Default.SFSConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblCashierTableAdapter" GeneratorDataComponentClassName="tblCashierTableAdapter" Name="tblCashier" UserDataComponentName="tblCashierTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SFSConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText> SELECT tblCashier.TranDate, tblCashier.CashierUserName, tblCashierDetail.CashierTranID, tblCashierDetail.TranType, tblCashierDetail.TranAmount,
+		tblCashierDetail.TranCount
+ FROM   SFS.dbo.tblCashierDetail tblCashierDetail INNER JOIN SFS.dbo.tblCashier tblCashier ON tblCashierDetail.CashierTranID=tblCashier.CashierTranID
+ </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CashierTranID" DataSetColumn="CashierTranID" />
+              <Mapping SourceColumn="TranDate" DataSetColumn="TranDate" />
+              <Mapping SourceColumn="CashierUserName" DataSetColumn="CashierUserName" />
+              <Mapping SourceColumn="TranType" DataSetColumn="TranType" />
+              <Mapping SourceColumn="TranAmount" DataSetColumn="TranAmount" />
+              <Mapping SourceColumn="TranCount" DataSetColumn="TranCount" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblCashierDetailTableAdapter" GeneratorDataComponentClassName="tblCashierDetailTableAdapter" Name="tblCashierDetail" UserDataComponentName="tblCashierDetailTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SFSConnectionString (MySettings)" DbObjectName="SFS.dbo.tblCashierDetail" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[tblCashierDetail] WHERE (([CashierDetailID] = @Original_CashierDetailID) AND ([CashierTranID] = @Original_CashierTranID) AND ([TranType] = @Original_TranType) AND ((@IsNull_TranCount = 1 AND [TranCount] IS NULL) OR ([TranCount] = @Original_TranCount)) AND ((@IsNull_TranAmount = 1 AND [TranAmount] IS NULL) OR ([TranAmount] = @Original_TranAmount)) AND ((@IsNull_FASVerifyUser = 1 AND [FASVerifyUser] IS NULL) OR ([FASVerifyUser] = @Original_FASVerifyUser)) AND ((@IsNull_FASVerifyDate = 1 AND [FASVerifyDate] IS NULL) OR ([FASVerifyDate] = @Original_FASVerifyDate)) AND ((@IsNull_SDBVerifyUser = 1 AND [SDBVerifyUser] IS NULL) OR ([SDBVerifyUser] = @Original_SDBVerifyUser)) AND ((@IsNull_SDBVerifyDate = 1 AND [SDBVerifyDate] IS NULL) OR ([SDBVerifyDate] = @Original_SDBVerifyDate)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CashierDetailID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CashierDetailID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CashierTranID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CashierTranID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_TranType" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="TranType" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TranCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_TranCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TranAmount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranAmount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_TranAmount" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="TranAmount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FASVerifyUser" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FASVerifyUser" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_FASVerifyUser" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FASVerifyUser" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FASVerifyDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FASVerifyDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_FASVerifyDate" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="FASVerifyDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SDBVerifyUser" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SDBVerifyUser" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SDBVerifyUser" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SDBVerifyUser" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SDBVerifyDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SDBVerifyDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SDBVerifyDate" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="SDBVerifyDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[tblCashierDetail] ([CashierTranID], [TranType], [TranCount], [TranAmount], [FASVerifyUser], [FASVerifyDate], [SDBVerifyUser], [SDBVerifyDate]) VALUES (@CashierTranID, @TranType, @TranCount, @TranAmount, @FASVerifyUser, @FASVerifyDate, @SDBVerifyUser, @SDBVerifyDate);
+SELECT CashierDetailID, CashierTranID, TranType, TranCount, TranAmount, FASVerifyUser, FASVerifyDate, SDBVerifyUser, SDBVerifyDate FROM tblCashierDetail WHERE (CashierDetailID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CashierTranID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CashierTranID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@TranType" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="TranType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@TranCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@TranAmount" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="TranAmount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FASVerifyUser" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FASVerifyUser" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@FASVerifyDate" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="FASVerifyDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SDBVerifyUser" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SDBVerifyUser" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SDBVerifyDate" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="SDBVerifyDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT CashierDetailID, CashierTranID, TranType, TranCount, TranAmount, FASVerifyUser, FASVerifyDate, SDBVerifyUser, SDBVerifyDate FROM dbo.tblCashierDetail</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[tblCashierDetail] SET [CashierTranID] = @CashierTranID, [TranType] = @TranType, [TranCount] = @TranCount, [TranAmount] = @TranAmount, [FASVerifyUser] = @FASVerifyUser, [FASVerifyDate] = @FASVerifyDate, [SDBVerifyUser] = @SDBVerifyUser, [SDBVerifyDate] = @SDBVerifyDate WHERE (([CashierDetailID] = @Original_CashierDetailID) AND ([CashierTranID] = @Original_CashierTranID) AND ([TranType] = @Original_TranType) AND ((@IsNull_TranCount = 1 AND [TranCount] IS NULL) OR ([TranCount] = @Original_TranCount)) AND ((@IsNull_TranAmount = 1 AND [TranAmount] IS NULL) OR ([TranAmount] = @Original_TranAmount)) AND ((@IsNull_FASVerifyUser = 1 AND [FASVerifyUser] IS NULL) OR ([FASVerifyUser] = @Original_FASVerifyUser)) AND ((@IsNull_FASVerifyDate = 1 AND [FASVerifyDate] IS NULL) OR ([FASVerifyDate] = @Original_FASVerifyDate)) AND ((@IsNull_SDBVerifyUser = 1 AND [SDBVerifyUser] IS NULL) OR ([SDBVerifyUser] = @Original_SDBVerifyUser)) AND ((@IsNull_SDBVerifyDate = 1 AND [SDBVerifyDate] IS NULL) OR ([SDBVerifyDate] = @Original_SDBVerifyDate)));
+SELECT CashierDetailID, CashierTranID, TranType, TranCount, TranAmount, FASVerifyUser, FASVerifyDate, SDBVerifyUser, SDBVerifyDate FROM tblCashierDetail WHERE (CashierDetailID = @CashierDetailID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CashierTranID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CashierTranID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@TranType" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="TranType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@TranCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@TranAmount" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="TranAmount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FASVerifyUser" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FASVerifyUser" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@FASVerifyDate" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="FASVerifyDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SDBVerifyUser" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SDBVerifyUser" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SDBVerifyDate" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="SDBVerifyDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CashierDetailID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CashierDetailID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CashierTranID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CashierTranID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_TranType" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="TranType" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TranCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_TranCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TranAmount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TranAmount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_TranAmount" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="TranAmount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FASVerifyUser" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FASVerifyUser" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_FASVerifyUser" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FASVerifyUser" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FASVerifyDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FASVerifyDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_FASVerifyDate" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="FASVerifyDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SDBVerifyUser" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SDBVerifyUser" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SDBVerifyUser" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SDBVerifyUser" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SDBVerifyDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SDBVerifyDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SDBVerifyDate" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="SDBVerifyDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="CashierDetailID" ColumnName="CashierDetailID" DataSourceName="SFS.dbo.tblCashierDetail" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CashierDetailID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="CashierDetailID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CashierDetailID" DataSetColumn="CashierDetailID" />
+              <Mapping SourceColumn="CashierTranID" DataSetColumn="CashierTranID" />
+              <Mapping SourceColumn="TranType" DataSetColumn="TranType" />
+              <Mapping SourceColumn="TranCount" DataSetColumn="TranCount" />
+              <Mapping SourceColumn="TranAmount" DataSetColumn="TranAmount" />
+              <Mapping SourceColumn="FASVerifyUser" DataSetColumn="FASVerifyUser" />
+              <Mapping SourceColumn="FASVerifyDate" DataSetColumn="FASVerifyDate" />
+              <Mapping SourceColumn="SDBVerifyUser" DataSetColumn="SDBVerifyUser" />
+              <Mapping SourceColumn="SDBVerifyDate" DataSetColumn="SDBVerifyDate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsCashierDepositTot" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsCashierDepositTot" msprop:Generator_DataSetName="dsCashierDepositTot" msprop:EnableTableAdapterManager="True">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tblCashier" msprop:Generator_UserTableName="tblCashier" msprop:Generator_RowDeletedName="tblCashierRowDeleted" msprop:Generator_RowChangedName="tblCashierRowChanged" msprop:Generator_RowClassName="tblCashierRow" msprop:Generator_RowChangingName="tblCashierRowChanging" msprop:Generator_RowEvArgName="tblCashierRowChangeEvent" msprop:Generator_RowEvHandlerName="tblCashierRowChangeEventHandler" msprop:Generator_TableClassName="tblCashierDataTable" msprop:Generator_TableVarName="tabletblCashier" msprop:Generator_RowDeletingName="tblCashierRowDeleting" msprop:Generator_TablePropName="tblCashier">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CashierTranID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="CashierTranID" msprop:Generator_ColumnVarNameInTable="columnCashierTranID" msprop:Generator_ColumnPropNameInRow="CashierTranID" msprop:Generator_ColumnPropNameInTable="CashierTranIDColumn" type="xs:int" />
+              <xs:element name="TranDate" msprop:Generator_UserColumnName="TranDate" msprop:Generator_ColumnVarNameInTable="columnTranDate" msprop:Generator_ColumnPropNameInRow="TranDate" msprop:Generator_ColumnPropNameInTable="TranDateColumn" type="xs:dateTime" />
+              <xs:element name="CashierUserName" msprop:Generator_UserColumnName="CashierUserName" msprop:Generator_ColumnVarNameInTable="columnCashierUserName" msprop:Generator_ColumnPropNameInRow="CashierUserName" msprop:Generator_ColumnPropNameInTable="CashierUserNameColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TranType" msprop:Generator_UserColumnName="TranType" msprop:Generator_ColumnPropNameInRow="TranType" msprop:Generator_ColumnVarNameInTable="columnTranType" msprop:Generator_ColumnPropNameInTable="TranTypeColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TranAmount" msprop:Generator_UserColumnName="TranAmount" msprop:Generator_ColumnPropNameInRow="TranAmount" msprop:Generator_ColumnVarNameInTable="columnTranAmount" msprop:Generator_ColumnPropNameInTable="TranAmountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TranCount" msprop:Generator_UserColumnName="TranCount" msprop:Generator_ColumnPropNameInRow="TranCount" msprop:Generator_ColumnVarNameInTable="columnTranCount" msprop:Generator_ColumnPropNameInTable="TranCountColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblCashierDetail" msprop:Generator_UserTableName="tblCashierDetail" msprop:Generator_RowDeletedName="tblCashierDetailRowDeleted" msprop:Generator_RowChangedName="tblCashierDetailRowChanged" msprop:Generator_RowClassName="tblCashierDetailRow" msprop:Generator_RowChangingName="tblCashierDetailRowChanging" msprop:Generator_RowEvArgName="tblCashierDetailRowChangeEvent" msprop:Generator_RowEvHandlerName="tblCashierDetailRowChangeEventHandler" msprop:Generator_TableClassName="tblCashierDetailDataTable" msprop:Generator_TableVarName="tabletblCashierDetail" msprop:Generator_RowDeletingName="tblCashierDetailRowDeleting" msprop:Generator_TablePropName="tblCashierDetail">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CashierDetailID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="CashierDetailID" msprop:Generator_ColumnVarNameInTable="columnCashierDetailID" msprop:Generator_ColumnPropNameInRow="CashierDetailID" msprop:Generator_ColumnPropNameInTable="CashierDetailIDColumn" type="xs:int" />
+              <xs:element name="CashierTranID" msprop:Generator_UserColumnName="CashierTranID" msprop:Generator_ColumnVarNameInTable="columnCashierTranID" msprop:Generator_ColumnPropNameInRow="CashierTranID" msprop:Generator_ColumnPropNameInTable="CashierTranIDColumn" type="xs:int" />
+              <xs:element name="TranType" msprop:Generator_UserColumnName="TranType" msprop:Generator_ColumnVarNameInTable="columnTranType" msprop:Generator_ColumnPropNameInRow="TranType" msprop:Generator_ColumnPropNameInTable="TranTypeColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TranCount" msprop:Generator_UserColumnName="TranCount" msprop:Generator_ColumnVarNameInTable="columnTranCount" msprop:Generator_ColumnPropNameInRow="TranCount" msprop:Generator_ColumnPropNameInTable="TranCountColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="TranAmount" msprop:Generator_UserColumnName="TranAmount" msprop:Generator_ColumnVarNameInTable="columnTranAmount" msprop:Generator_ColumnPropNameInRow="TranAmount" msprop:Generator_ColumnPropNameInTable="TranAmountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FASVerifyUser" msprop:Generator_UserColumnName="FASVerifyUser" msprop:Generator_ColumnVarNameInTable="columnFASVerifyUser" msprop:Generator_ColumnPropNameInRow="FASVerifyUser" msprop:Generator_ColumnPropNameInTable="FASVerifyUserColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FASVerifyDate" msprop:Generator_UserColumnName="FASVerifyDate" msprop:Generator_ColumnVarNameInTable="columnFASVerifyDate" msprop:Generator_ColumnPropNameInRow="FASVerifyDate" msprop:Generator_ColumnPropNameInTable="FASVerifyDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SDBVerifyUser" msprop:Generator_UserColumnName="SDBVerifyUser" msprop:Generator_ColumnVarNameInTable="columnSDBVerifyUser" msprop:Generator_ColumnPropNameInRow="SDBVerifyUser" msprop:Generator_ColumnPropNameInTable="SDBVerifyUserColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SDBVerifyDate" msprop:Generator_UserColumnName="SDBVerifyDate" msprop:Generator_ColumnVarNameInTable="columnSDBVerifyDate" msprop:Generator_ColumnPropNameInRow="SDBVerifyDate" msprop:Generator_ColumnPropNameInTable="SDBVerifyDateColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblCashier" />
+      <xs:field xpath="mstns:CashierTranID" />
+    </xs:unique>
+    <xs:unique name="tblCashierDetail_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblCashierDetail" />
+      <xs:field xpath="mstns:CashierDetailID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
